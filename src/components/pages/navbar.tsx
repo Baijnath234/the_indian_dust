@@ -30,13 +30,13 @@ const Navbar = () => {
         {/* <h1 className='w-full text-3xl front-bold text-[#00df9a]'>Navbar</h1> */}
         <ul className="hidden md:flex">
           <li className="p-4 text-lg">
-            <a href="/">Home</a>
+            <a href="/">Search</a>
           </li>
           <li className="p-4 text-lg">
-            <a href="/blogsPage">Company</a>
+            <a href="/blogsPage">Wishlist</a>
           </li>
           <li className="p-4 text-lg">
-            <a href="/newsSectionPage">Resources</a>
+            <a href="/newsSectionPage">Sing In</a>
           </li>
           <li className="p-4 text-lg">
             <a href="/about">About</a>
@@ -44,9 +44,9 @@ const Navbar = () => {
           <li className="p-4 text-lg">
             <a href="/contactPage">Contact</a>
           </li>
-          <li className="p-4 text-lg">
+          <li className="p-4 text-lg cart-icon ">
             <button className="cart-icon" onClick={toggleCart}>
-              {<AiOutlineShoppingCart />}
+              {<AiOutlineShoppingCart />}Cart
             </button>
           </li>
         </ul>
@@ -80,7 +80,12 @@ const Navbar = () => {
             <li className="p-4 border-b border-gray-600">Sing In</li>
             <li className="p-4 border-b border-gray-600">About</li>
             <li className="p-4 border-b border-gray-600">Contact</li>
-            <li className="p-4 border-b border-gray-600">Cart</li>
+            <li className="p-4 text-lg cart-icon">
+            <button className="cart-icon" onClick={toggleCart}>
+              {<AiOutlineShoppingCart />}
+              <h3>Cart</h3>
+            </button>
+          </li>
           </ul>
         </div>
       </div>
