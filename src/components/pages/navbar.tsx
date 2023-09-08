@@ -24,33 +24,28 @@ const Navbar = () => {
           alt=""
           className="m-4"
           style={{
-            width: "70px",
+            width: "60px",
           }}
         />
         {/* <h1 className='w-full text-3xl front-bold text-[#00df9a]'>Navbar</h1> */}
         <ul className="hidden md:flex">
           <li className="p-4 text-lg">
-            {" "}
-            <a href="/">Home</a>{" "}
+            <a href="/">Home</a>
           </li>
           <li className="p-4 text-lg">
-        
             <a href="/blogsPage">Company</a>
           </li>
           <li className="p-4 text-lg">
-      
             <a href="/newsSectionPage">Resources</a>
           </li>
           <li className="p-4 text-lg">
-      
             <a href="/about">About</a>
           </li>
           <li className="p-4 text-lg">
             <a href="/contactPage">Contact</a>
           </li>
           <li className="p-4 text-lg">
-            <button className="cart-icon" 
-            onClick={toggleCart}>
+            <button className="cart-icon" onClick={toggleCart}>
               {<AiOutlineShoppingCart />}
             </button>
           </li>
@@ -75,7 +70,7 @@ const Navbar = () => {
             alt=""
             className="m-4 w-full"
             style={{
-              width: "70px",
+              width: "60px",
             }}
           />
           {/* <h1 className='w-full text-3xl front-bold text-[#00df9a] m-4'>Navbar</h1> */}
@@ -88,8 +83,7 @@ const Navbar = () => {
           </ul>
         </div>
       </div>
-      {console.log(isOpen, 'isOpen1')
-      }
+      {console.log(isOpen, "isOpen1")}
       {<ShoppingCart isOpen={isOpen} />}
     </>
   );
