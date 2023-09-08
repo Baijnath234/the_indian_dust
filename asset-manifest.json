@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/the_indian_dust/static/css/main.e7865a63.css",
-    "main.js": "/the_indian_dust/static/js/main.c983e013.js",
+    "main.js": "/the_indian_dust/static/js/main.19353af9.js",
     "static/js/787.3b9d8809.chunk.js": "/the_indian_dust/static/js/787.3b9d8809.chunk.js",
     "static/media/logo.png": "/the_indian_dust/static/media/logo.e857672fddf1419436c6.png",
     "index.html": "/the_indian_dust/index.html",
     "main.e7865a63.css.map": "/the_indian_dust/static/css/main.e7865a63.css.map",
-    "main.c983e013.js.map": "/the_indian_dust/static/js/main.c983e013.js.map",
+    "main.19353af9.js.map": "/the_indian_dust/static/js/main.19353af9.js.map",
     "787.3b9d8809.chunk.js.map": "/the_indian_dust/static/js/787.3b9d8809.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.e7865a63.css",
-    "static/js/main.c983e013.js"
+    "static/js/main.19353af9.js"
   ]
 }
