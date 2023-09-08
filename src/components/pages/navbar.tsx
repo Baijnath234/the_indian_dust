@@ -3,7 +3,10 @@ import {
   AiOutlineMenu,
   AiOutlineCloseCircle,
   AiOutlineShoppingCart,
+  AiFillHeart,
+  AiOutlineSearch,
 } from "react-icons/ai";
+import {BiLogIn} from 'react-icons/bi'
 import Logo from "../../images/logo.png";
 import ShoppingCart from "./ShoppingCart";
 import useCartTaskDetails from "../../hook/cartdetails/CartTask";
@@ -30,13 +33,13 @@ const Navbar = () => {
         {/* <h1 className='w-full text-3xl front-bold text-[#00df9a]'>Navbar</h1> */}
         <ul className="hidden md:flex">
           <li className="p-4 text-lg">
-            <a href="/">Search</a>
+            <a className="wishlist-icon" href="/">{<AiOutlineSearch/>}Search</a>
+          </li>
+          <li className="p-4 text-lg ">
+            <a className="wishlist-icon" href="/blogsPage">{<AiFillHeart/>}Wishlist</a>
           </li>
           <li className="p-4 text-lg">
-            <a href="/blogsPage">Wishlist</a>
-          </li>
-          <li className="p-4 text-lg">
-            <a href="/newsSectionPage">Sing In</a>
+            <a className="wishlist-icon" href="/newsSectionPage">{<BiLogIn/>}SingIn</a>
           </li>
           <li className="p-4 text-lg">
             <a href="/about">About</a>
@@ -75,9 +78,18 @@ const Navbar = () => {
           />
           {/* <h1 className='w-full text-3xl front-bold text-[#00df9a] m-4'>Navbar</h1> */}
           <ul className="p-4 uppercase">
-            <li className="p-4 border-b border-gray-600">Search</li>
-            <li className="p-4 border-b border-gray-600">Wishlist</li>
-            <li className="p-4 border-b border-gray-600">Sing In</li>
+          <li className="p-4 text-lg">
+            <a href="/">{<AiOutlineSearch/>}
+            <h3>Search</h3></a>
+          </li>
+            <li className="p-4 text-lg wishlist-icon">
+            <a href="/blogsPage">{<AiFillHeart/>}
+            <h3>Wishlist</h3></a>
+          </li>
+          <li className="p-4 text-lg">
+            <a href="/newsSectionPage">{<BiLogIn/>}
+            <h3>SingIn</h3></a>
+          </li>
             <li className="p-4 border-b border-gray-600">About</li>
             <li className="p-4 border-b border-gray-600">Contact</li>
             <li className="p-4 text-lg cart-icon">
