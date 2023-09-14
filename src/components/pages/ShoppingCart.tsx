@@ -1,7 +1,6 @@
-import { Fragment, useState, useEffect } from 'react'
+import { Fragment } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
 import { AiOutlineClose } from 'react-icons/ai'
-import useCartTaskDetails from "../../hook/cartdetails/CartTask";
 const products = [
     {
       id: 1,
@@ -29,38 +28,19 @@ const products = [
 
   type ShoppingCartProps = {
     isOpen: boolean;
+    setIsOpen:any;
+    setNav:any;
   };
 
-const ShoppingCart = ({ isOpen }: ShoppingCartProps) => {
-  // const {isClose, closeCart} = useCartTaskDetails()
-  // const [open, setOpen] = useState(true)
-  const [isClose, setIsColse] = useState(true)
+const ShoppingCart = ({isOpen,setIsOpen,setNav}:ShoppingCartProps) => {
+  
 
-  const closeCart = () => {
-    console.log('Closing cart');
-    setIsColse(false);
-    console.log(isOpen, "Close");
-  };
 
-  // useEffect(() => {
-  //   // Use the isOpen state to toggle the cart's visibility
-  //   if (isOpen) {
-  //     // Cart is open, you can apply logic to show the cart here
-  //     console.log('Cart is open');
-  //     // You might want to update the UI to display the cart content
-  //   } else {
-  //     // Cart is closed, you can apply logic to hide the cart here
-  //     console.log('Cart is closed');
-  //     // You might want to update the UI to hide the cart content
-  //   }
-  // }, [isOpen]);
-
-  console.log(isOpen, 'isOpen');
   return (
     <>
-    {isOpen && isClose && (
+    {isOpen && (
     <Transition.Root show={isOpen} as={Fragment}>
-      <Dialog as="div" className="relative z-10" onClose={closeCart}>
+      <Dialog as="div" className="relative z-10" onClose={() => setIsOpen()}>
         <Transition.Child
           as={Fragment}
           enter="ease-in-out duration-500"
@@ -94,7 +74,7 @@ const ShoppingCart = ({ isOpen }: ShoppingCartProps) => {
                           <button
                             type="button"
                             className="relative -m-2 p-2 text-gray-400 hover:text-gray-500"
-                            onClick={() => closeCart()}
+                            onClick={() => setIsOpen(false)}
                           >
                             <span className="absolute -inset-0.5" />
                             <span className="sr-only">Close panel</span>
@@ -166,7 +146,9 @@ const ShoppingCart = ({ isOpen }: ShoppingCartProps) => {
                           <button
                             type="button"
                             className="font-medium text-indigo-600 hover:text-indigo-500"
-                            onClick={() => closeCart()}
+                            onClick={() => {
+                              setNav(false)
+                              setIsOpen(false)}}
                           >
                             Continue Shopping
                             <span aria-hidden="true"> &rarr;</span>

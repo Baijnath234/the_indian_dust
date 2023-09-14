@@ -6,14 +6,19 @@ import {
   AiFillHeart,
   AiOutlineSearch,
 } from "react-icons/ai";
-import {BiLogIn} from 'react-icons/bi'
+import { BiLogIn } from "react-icons/bi";
 import Logo from "../../images/logo.png";
 import ShoppingCart from "./ShoppingCart";
-import useCartTaskDetails from "../../hook/cartdetails/CartTask";
+import SearchModal from "../common/SearchModal";
 
 const Navbar = () => {
   const [nav, setNav] = useState(false);
-  const { isOpen, toggleCart } = useCartTaskDetails();
+  const [isOpen, setIsOpen] = useState(false);
+  const [open , setOpen] = useState(false)
+
+  const handelClickCart = () => {
+    setIsOpen(true);
+  };
 
   const handleClickNav = () => {
     setNav(!nav);
@@ -33,22 +38,28 @@ const Navbar = () => {
         {/* <h1 className='w-full text-3xl front-bold text-[#00df9a]'>Navbar</h1> */}
         <ul className="hidden md:flex">
           <li className="p-4 text-lg">
-            <a className="wishlist-icon" href="/">{<AiOutlineSearch/>}Search</a>
+            <button className="wishlist-icon" onClick={() => setOpen(true)}>
+              {<AiOutlineSearch />}
+            </button>
           </li>
           <li className="p-4 text-lg ">
-            <a className="wishlist-icon" href="/blogsPage">{<AiFillHeart/>}Wishlist</a>
+            <a className="wishlist-icon" href="/blogsPage">
+              {<AiFillHeart />}Wishlist
+            </a>
           </li>
           <li className="p-4 text-lg">
-            <a className="wishlist-icon" href="/newsSectionPage">{<BiLogIn/>}SingIn</a>
+            <a className="wishlist-icon" href="/newsSectionPage">
+              {<BiLogIn />}SingIn
+            </a>
           </li>
-          <li className="p-4 text-lg">
+          <li className="wishlist-icon p-4 text-lg">
             <a href="/about">About</a>
           </li>
-          <li className="p-4 text-lg">
+          <li className="wishlist-icon p-4 text-lg">
             <a href="/contactPage">Contact</a>
           </li>
-          <li className="p-4 text-lg cart-icon ">
-            <button className="cart-icon" onClick={toggleCart}>
+          <li className="wishlist-icon p-4 text-lg cart-icon ">
+            <button className="cart-icon" onClick={() => handelClickCart()}>
               {<AiOutlineShoppingCart />}Cart
             </button>
           </li>
@@ -78,31 +89,36 @@ const Navbar = () => {
           />
           {/* <h1 className='w-full text-3xl front-bold text-[#00df9a] m-4'>Navbar</h1> */}
           <ul className="p-4 uppercase">
-          <li className="p-4 text-lg">
-            <a href="/">{<AiOutlineSearch/>}
-            <h3>Search</h3></a>
-          </li>
+            <li className="p-4 text-lg">
+              <button onClick={() => setOpen(true)}>
+                {<AiOutlineSearch />}
+              </button>
+            </li>
             <li className="p-4 text-lg wishlist-icon">
-            <a href="/blogsPage">{<AiFillHeart/>}
-            <h3>Wishlist</h3></a>
-          </li>
-          <li className="p-4 text-lg">
-            <a href="/newsSectionPage">{<BiLogIn/>}
-            <h3>SingIn</h3></a>
-          </li>
+              <a href="/blogsPage">
+                {<AiFillHeart />}
+                <h3>Wishlist</h3>
+              </a>
+            </li>
+            <li className="p-4 text-lg">
+              <a href="/newsSectionPage">
+                {<BiLogIn />}
+                <h3>SingIn</h3>
+              </a>
+            </li>
             <li className="p-4 border-b border-gray-600">About</li>
             <li className="p-4 border-b border-gray-600">Contact</li>
             <li className="p-4 text-lg cart-icon">
-            <button className="cart-icon" onClick={toggleCart}>
-              {<AiOutlineShoppingCart />}
-              <h3>Cart</h3>
-            </button>
-          </li>
+              <button className="cart-icon" onClick={() => handelClickCart()}>
+                {<AiOutlineShoppingCart />}
+                <h3>Cart</h3>
+              </button>
+            </li>
           </ul>
         </div>
       </div>
-      {console.log(isOpen, "isOpen1")}
-      {<ShoppingCart isOpen={isOpen} />}
+      {<ShoppingCart isOpen={isOpen} setIsOpen={setIsOpen} setNav={setNav} />}
+      {<SearchModal open={open} />}
     </>
   );
 };

@@ -1,5 +1,5 @@
 import React from "react";
-// import Typed from "react-typed";
+import Typed from "react-typed";
 import { AiOutlineClose , AiOutlineEye} from "react-icons/ai";
 import SatrsPage from "./SatrsPage";
 import CEOProfilePage from "./CEOProfilePage";
@@ -21,13 +21,12 @@ const products = [
 const Index = () => {
   return (
     <>
-      {/* <div className="h-14 bg-gradient-to-r from-sky-500 to-indigo-500">
+      <div className="h-14 bg-gradient-to-r from-sky-500 to-indigo-500">
         <h1 className="text-lg font-bold text-center pt-4">
-          {" "}
-          Get Started with our company{" "}
-          <Typed strings={["red.", "blue.", "black."]} typeSpeed={40}  backSpeed={50} loop style={{color:"red"}} />
+          Get Started with our Product- 
+          <Typed strings={["T-shirt.", "SweatShirt.", "NewDesign."]} typeSpeed={40}  backSpeed={50} loop style={{color:"red"}} />
         </h1>
-      </div> */}
+      </div>
       <div className="Banner relative isolate flex items-center gap-x-6 overflow-hidden bg-gray-50 px-6 py-2.5 sm:px-3.5 sm:before:flex-1">
         <div
           className="absolute left-[max(-7rem,calc(50%-52rem))] top-1/2 -z-10 -translate-y-1/2 transform-gpu blur-2xl"
@@ -167,7 +166,7 @@ const Index = () => {
               </div>
 
               <a
-                href="#"
+                href="##"
                 className="inline-block rounded-md border border-transparent bg-indigo-600 px-8 py-3 text-center font-medium text-white hover:bg-indigo-700"
               >
                 Get Started
