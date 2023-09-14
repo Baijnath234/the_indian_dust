@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/the_indian_dust/static/css/main.fcc7cf24.css",
-    "main.js": "/the_indian_dust/static/js/main.e5729ec5.js",
+    "main.css": "/the_indian_dust/static/css/main.e7924c8a.css",
+    "main.js": "/the_indian_dust/static/js/main.a44bfde9.js",
     "static/js/787.3b9d8809.chunk.js": "/the_indian_dust/static/js/787.3b9d8809.chunk.js",
     "static/media/logo.png": "/the_indian_dust/static/media/logo.e857672fddf1419436c6.png",
     "index.html": "/the_indian_dust/index.html",
-    "main.fcc7cf24.css.map": "/the_indian_dust/static/css/main.fcc7cf24.css.map",
-    "main.e5729ec5.js.map": "/the_indian_dust/static/js/main.e5729ec5.js.map",
+    "main.e7924c8a.css.map": "/the_indian_dust/static/css/main.e7924c8a.css.map",
+    "main.a44bfde9.js.map": "/the_indian_dust/static/js/main.a44bfde9.js.map",
     "787.3b9d8809.chunk.js.map": "/the_indian_dust/static/js/787.3b9d8809.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.fcc7cf24.css",
-    "static/js/main.e5729ec5.js"
+    "static/css/main.e7924c8a.css",
+    "static/js/main.a44bfde9.js"
   ]
 }
