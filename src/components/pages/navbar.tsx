@@ -24,6 +24,10 @@ const Navbar = () => {
     setNav(!nav);
   };
 
+  const handleClose = () => {
+    setOpen(false);
+  };  
+
   return (
     <>
       <div className="navbar flex justify-between items-center h-24 max-w-[1240px] px-4">
@@ -38,7 +42,7 @@ const Navbar = () => {
         {/* <h1 className='w-full text-3xl front-bold text-[#00df9a]'>Navbar</h1> */}
         <ul className="hidden md:flex">
           <li className="p-4 text-lg">
-            <button className="wishlist-icon" onClick={() => setOpen(true)}>
+            <button className="wishlist-icon" onClick={() => { console.log('Search button clicked'); setOpen(true); }}>
               {<AiOutlineSearch />}
             </button>
           </li>
@@ -118,7 +122,7 @@ const Navbar = () => {
         </div>
       </div>
       {<ShoppingCart isOpen={isOpen} setIsOpen={setIsOpen} setNav={setNav} />}
-      {<SearchModal open={open} />}
+      {open && <SearchModal open={open} onClose={handleClose}/>}
     </>
   );
 };

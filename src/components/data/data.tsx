@@ -1,0 +1,17 @@
+export const words = [
+    'a',
+    'all',
+    'about',
+    'also',
+    'and',
+    'as',
+    'at',
+    'be',
+    'because',
+    'but',
+    'by',
+    'can',
+    'come',
+    'could',
+    'day',
+];
