@@ -42,7 +42,7 @@ const Navbar = () => {
         {/* <h1 className='w-full text-3xl front-bold text-[#00df9a]'>Navbar</h1> */}
         <ul className="hidden md:flex">
           <li className="p-4 text-lg">
-            <button className="wishlist-icon" onClick={() => { console.log('Search button clicked'); setOpen(true); }}>
+            <button className="wishlist-icon" onClick={() => setOpen(true)}>
               {<AiOutlineSearch />}
             </button>
           </li>

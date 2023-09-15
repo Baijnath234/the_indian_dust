@@ -8,11 +8,11 @@ interface SearchProps {
 
 const SearchModal = ({ open, onClose }: SearchProps) => {
   const [activeSearch, setActiveSearch] = useState([]);
-
-  console.log(activeSearch, "active");
+  const [seacrhQuery, setSearchQuery] = useState()
 
   const handleSearch = (e: any) => {
     const searchTerm = e.target.value;
+    setSearchQuery(searchTerm)
     if (searchTerm === "") {
       setActiveSearch([]);
       return false;
@@ -21,6 +21,13 @@ const SearchModal = ({ open, onClose }: SearchProps) => {
       words.filter((word) => word.includes(searchTerm)).slice(0, 8) as any
     );
   };
+
+  const handleClickSearch = (value: any) => {
+    setSearchQuery(value)
+    onClose();
+    console.log(value);
+    
+  }
 
   return (
     <section>
@@ -47,6 +54,7 @@ const SearchModal = ({ open, onClose }: SearchProps) => {
                   aria-autocomplete="list"
                   data-headlessui-state
                   onChange={handleSearch}
+                  value={seacrhQuery}
                 />
                 <svg
                   className="pointer-events-none absolute right-4 top-4 h-6 w-6 fill-slate-400"
@@ -58,7 +66,7 @@ const SearchModal = ({ open, onClose }: SearchProps) => {
                 {activeSearch.length > 0 && (
                   <div style={{ color: "black", padding: "10px", gap: "2px" }}>
                     {activeSearch.map((result, index: number) => (
-                      <div
+                      <div onClick={() => handleClickSearch(result)}
                         style={{ borderBottom: "1px solid lightgrey" }}
                         key={index}
                       >
